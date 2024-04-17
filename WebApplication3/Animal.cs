@@ -1,23 +1,29 @@
 namespace WebApplication3;
 
-public class Animal {
-    public Animal(int id, string name, string category, string weight, string furColor)
-    {
-        IdAnimal = id;
-        Name = name;
-        Category = category;
-        Weight = weight;
-        FurColor = furColor;
-        
-    }
+public class Animal
+{
+    public int IdAnimal { get; set; }
+    public string name { get; set; }
+    public string description { get; set; }
+    public string category { get; set; }
+    public string area { get; set; }
 
     public Animal()
     {
     }
 
-    public int IdAnimal { get; set; }
-    public string Name { get; set; }
-    public string Category { get; set; }
-    public string Weight { get; set; }
-    public string FurColor { get; set; }
+    public Animal(int idAnimal, string name, string description, string category, string area)
+    {
+        IdAnimal = idAnimal;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.area = area;
+    }
+    
+    public override string ToString()
+    {
+        return $"IdAnimal: {IdAnimal}, Name: {name}, Description: {description}, Category: {category}, Area: {area}";
+    }
+    
 }
